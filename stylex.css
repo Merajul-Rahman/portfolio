@@ -352,20 +352,49 @@ footer i {
     border-radius: 15px;
 }
 
-.slider {
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure the gallery is responsive */
+.projects-section {
     width: 100%;
-    max-width: 70vw;
+    padding: 20px;
+    text-align: center;
+}
+
+.slider {
+    max-width: 100%;
     overflow: hidden;
-    align-items: center;
-    margin: 0 auto;
 }
 
 .slides {
     display: flex;
-    transition: transform 1s ease;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .slides img {
     width: 100%;
+    max-width: 300px; /* Ensure all images have the same max width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px;
+    border-radius: 8px;
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .slides img {
+        max-width: 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .slides img {
+        max-width: 100%;
+    }
 }
